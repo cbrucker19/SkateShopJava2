@@ -1,11 +1,17 @@
 package skate.beans;
+import javax.annotation.ManagedBean;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 //Manuel Corral Ledezma
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@Entity
 public class Customer {
+	@Id
 	private long customerId;
 	private String firstName;
 	private String lastName;

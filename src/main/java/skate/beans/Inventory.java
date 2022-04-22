@@ -1,11 +1,16 @@
 package skate.beans;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 //Manuel Corral Ledezma
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@Entity
 public class Inventory {
+	@Id
 	private long itemId;
 	private String itemName;
 	private String itemLocation;
