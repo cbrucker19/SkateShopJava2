@@ -1,11 +1,8 @@
 package skate.beans;
-<<<<<<< HEAD
 import javax.annotation.ManagedBean;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-//Manuel Corral Ledezma
-=======
 
 import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
@@ -14,25 +11,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.ManyToMany;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.annotation.Id;
-
 import lombok.AllArgsConstructor;
->>>>>>> 1653ea3 (commit)
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-<<<<<<< HEAD
 @Entity
-public class Customer {
-	@Id
-=======
 @AllArgsConstructor
 public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
->>>>>>> 1653ea3 (commit)
 	private long customerId;
 	private String firstName;
 	private String lastName;
