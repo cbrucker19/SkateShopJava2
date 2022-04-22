@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class WebController {
+	@Autowired
     CustomerRepository repo;
     //Method that maps to the results page to view all the results
     @GetMapping("/viewAll")
