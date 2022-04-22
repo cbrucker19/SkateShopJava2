@@ -1,11 +1,18 @@
 package skate.beans;
 
-import java.util.ArrayList;
 import java.util.List;
+
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.ManyToMany;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,12 +21,21 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Order {
 	//primary key
+	@Id
+	@GeneratedValue
 	private long customerId;
 	@Id
+	@GeneratedValue
 	private long orderId;
-	private ArrayList<Item> orderContents = new ArrayList<Item>();
+	@Autowired
+	@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	private Double subtotal;
+	private Double taxes;
+	private Double finalTotal;
+	private Double discount;
+	private List<Item> orderContents;
 	
-	public Order(long customerId, long orderId, ArrayList<Item> orderItem) {
+	public Order(long customerId, long orderId, List<Item> orderItem) {
 		super();
 		this.customerId = customerId;
 		this.orderId = orderId;
