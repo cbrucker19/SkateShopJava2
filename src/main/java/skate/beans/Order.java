@@ -34,9 +34,6 @@ public class Order {
 	
 	
 	
-	public Order() {
-		super();
-	}
 
 
 	public Order(long customerId, long orderId, List<Items> orderItem) {

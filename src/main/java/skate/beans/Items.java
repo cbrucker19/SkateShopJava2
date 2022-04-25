@@ -21,11 +21,6 @@ public class Items {
 	private String itemLocation;
 	private int itemQuantity;
 	
-	
-	
-	public Items() {
-		super();
-	}
 
 
 
