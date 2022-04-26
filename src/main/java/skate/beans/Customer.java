@@ -28,7 +28,6 @@ public class Customer {
 	@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private Address address;
 
-
 	public Customer(String firstName, String lastName) {
 		super();
 		this.firstName = firstName;
@@ -48,5 +47,6 @@ public class Customer {
 		this.lastName = lastName;
 		this.organization = organization;
 	}
+
 }
 
