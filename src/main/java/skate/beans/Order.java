@@ -3,13 +3,10 @@ package skate.beans;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.ManyToMany;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.persistence.GeneratedValue;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -24,22 +21,17 @@ public class Order {
 	@Id
 	@GeneratedValue
 	private long orderId;
-	@Autowired
-	@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private Double subtotal;
 	private Double taxes;
 	private Double finalTotal;
 	private Double discount;
-	private List<Items> orderContents;
+	@Autowired
+	private List<Items> orderItems;
 	
-	
-	
-
-
-	public Order(long customerId, long orderId, List<Items> orderItem) {
+	public Order(long customerId, long orderId, List<Items> orderItems) {
 		super();
 		this.customerId = customerId;
 		this.orderId = orderId;
-		this.orderContents = orderItem;
+		this.orderItems = orderItems;
 	}
 }
