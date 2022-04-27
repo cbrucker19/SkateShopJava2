@@ -21,6 +21,9 @@ public class Items {
 	private String itemLocation;
 	private int itemQuantity;
 	
+
+
+
 	public Items(long itemId, String itemName, int itemQuantity, Double itemPrice ) {
 		super();
 		this.itemId = itemId;
