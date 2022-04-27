@@ -31,7 +31,7 @@ public class Order {
 	private Double finalTotal;
 	private Double discount;
 	private List<Items> orderContents;
-	
+
 	public Order(long customerId, long orderId, List<Items> orderItem) {
 		super();
 		this.customerId = customerId;

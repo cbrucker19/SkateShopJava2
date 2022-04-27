@@ -1,33 +1,20 @@
 package skate.beans;
-<<<<<<< HEAD
-import javax.annotation.ManagedBean;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
-=======
->>>>>>> b2364f8e7dc2fcb15174558d969969948c7f829d
-
 import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import lombok.AllArgsConstructor;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-<<<<<<< HEAD
 @Entity
-=======
->>>>>>> b2364f8e7dc2fcb15174558d969969948c7f829d
-@AllArgsConstructor
 public class Customer {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long customerId;
 	private String firstName;
 	private String lastName;
