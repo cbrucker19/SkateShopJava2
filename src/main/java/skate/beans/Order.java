@@ -26,9 +26,9 @@ public class Order {
 	private Double taxes;
 	private Double finalTotal;
 	//TODO fill this in type that mysql accepts - hibernate error on type
-	private List<Items> orderItems;
+	private List<Item> orderItems;
 	
-	public Order(long customerId, long orderId, List<Items> orderItems) {
+	public Order(long customerId, long orderId, List<Item> orderItems) {
 		super();
 		this.customerId = customerId;
 		this.orderId = orderId;

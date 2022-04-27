@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 import skate.beans.Customer;
 import skate.beans.Inventory;
-import skate.beans.Items;
+import skate.beans.Item;
 import skate.beans.Order;
 
 @Configuration
@@ -19,8 +19,8 @@ public class BeanConfiguration {
 	}
 	
 	@Bean 
-	public Items items () {
-		Items bean = new Items();
+	public Item items () {
+		Item bean = new Item();
 		return bean;
 	}
 	
