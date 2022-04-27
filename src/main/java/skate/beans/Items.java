@@ -1,6 +1,7 @@
 package skate.beans;
 
 import javax.persistence.GeneratedValue;
+import javax.persistence.Table;
 
 import org.springframework.data.annotation.Id;
 
@@ -11,6 +12,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "ITEM")
+//item quantity would be defined in inventory
 public class Items {
 	@Id
 	@GeneratedValue
@@ -19,16 +22,14 @@ public class Items {
 	private String itemDescription;
 	private Double itemPrice;
 	private String itemLocation;
-	private int itemQuantity;
 	
 
 
 
-	public Items(long itemId, String itemName, int itemQuantity, Double itemPrice ) {
+	public Items(long itemId, String itemName, Double itemPrice ) {
 		super();
 		this.itemId = itemId;
 		this.itemName = itemName;
-		this.itemQuantity = itemQuantity;
 		this.itemPrice = itemPrice;
 	}
 }

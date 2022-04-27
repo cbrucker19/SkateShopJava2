@@ -1,28 +1,29 @@
 package skate.beans;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @Entity
+@AllArgsConstructor
+@Table(name = "CUSTOMER")
 public class Customer {
 	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
 	private long customerId;
+	
 	private String firstName;
 	private String lastName;
 	private String organization;
 	private String email;
-	@Autowired
-	@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-	private Address address;
+	private String orgAddress;
 
 	public Customer(String firstName, String lastName) {
 		super();
@@ -33,14 +34,6 @@ public class Customer {
 	public Customer(long customerId, String organization) {
 		super();
 		this.customerId = customerId;
-		this.organization = organization;
-	}
-	
-	public Customer(long customerId, String firstName, String lastName, String organization) {
-		super();
-		this.customerId = customerId;
-		this.firstName = firstName;
-		this.lastName = lastName;
 		this.organization = organization;
 	}
 

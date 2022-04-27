@@ -21,6 +21,7 @@ public class SkateShopJ2Application {
 
 	@Autowired
 	CustomerRepository custRepo;
+	@Autowired
 	InventoryRepository invRepo;
 	
 	public void run(String...args)throws Exception {

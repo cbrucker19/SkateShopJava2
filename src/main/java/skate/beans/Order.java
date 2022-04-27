@@ -3,10 +3,10 @@ package skate.beans;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
+import javax.persistence.ManyToOne;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,16 +16,16 @@ import lombok.NoArgsConstructor;
 public class Order {
 	//primary key
 	@Id
-	@GeneratedValue
+	//many orders one customer
+	@ManyToOne
 	private long customerId;
-	@Id
-	@GeneratedValue
+	//cant have 2 primary keys
+	@GeneratedValue(strategy= GenerationType.AUTO)
 	private long orderId;
 	private Double subtotal;
 	private Double taxes;
 	private Double finalTotal;
-	private Double discount;
-	@Autowired
+	//TODO fill this in type that mysql accepts - hibernate error on type
 	private List<Items> orderItems;
 	
 	public Order(long customerId, long orderId, List<Items> orderItems) {
