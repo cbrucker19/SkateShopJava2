@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import skate.beans.Customer;
-import skate.beans.Items;
+import skate.beans.Item;
 import skate.repository.CustomerRepository;
 import skate.repository.InventoryRepository;
 
@@ -27,7 +27,7 @@ public class InputController {
 	
 	@GetMapping("/inputItems")
 	public String addNewItems(Model model) {
-		Items i = new Items();
+		Item i = new Item();
 		model.addAttribute("newItems", i);
 		return "input";
 	}

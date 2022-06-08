@@ -3,10 +3,9 @@ package skate.controller;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import skate.beans.Address;
 import skate.beans.Customer;
 import skate.beans.Inventory;
-import skate.beans.Items;
+import skate.beans.Item;
 import skate.beans.Order;
 
 @Configuration
@@ -20,14 +19,8 @@ public class BeanConfiguration {
 	}
 	
 	@Bean 
-	public Address address() {
-		Address bean = new Address();
-		return bean;
-	}
-	
-	@Bean 
-	public Items items () {
-		Items bean = new Items();
+	public Item items () {
+		Item bean = new Item();
 		return bean;
 	}
 	

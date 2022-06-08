@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Items {
+//item quantity would be defined in inventory
+public class Item {
 	@Id
 	@GeneratedValue
 	private long itemId;
@@ -19,13 +20,14 @@ public class Items {
 	private String itemDescription;
 	private Double itemPrice;
 	private String itemLocation;
-	private int itemQuantity;
 	
-	public Items(long itemId, String itemName, int itemQuantity, Double itemPrice ) {
+
+
+
+	public Item(long itemId, String itemName, Double itemPrice ) {
 		super();
 		this.itemId = itemId;
 		this.itemName = itemName;
-		this.itemQuantity = itemQuantity;
 		this.itemPrice = itemPrice;
 	}
 }
